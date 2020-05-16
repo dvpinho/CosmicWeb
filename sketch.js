@@ -9,16 +9,19 @@ function setup() {
 
 function draw() {
 
-  radius = 3*min(width, height);
+  let phi_1 = random(0, 2*PI);
+  let phi_2 = random(0, 2*PI);
 
-  let angle1 = random(0, 2*PI);
-  let angle2 = random(0, 2*PI);
+  radius = Math.sqrt(width*width + height*height);
 
-  let xpos1 = width/2 + radius*cos(angle1);
-  let xpos2 = width/2 + radius*cos(angle2);
+  let page_center_x = width/2;
+  let page_center_y = height/2;
 
-  let ypos1 = height/2 + radius*sin(angle1);
-  let ypos2 = height/2 + radius*sin(angle2);
+  let x1 = page_center_x + radius*cos(phi_1);
+  let y1 = page_center_y + radius*sin(phi_1);
+
+  let x2 = page_center_x + radius*cos(phi_2);
+  let y2 = page_center_y + radius*sin(phi_2);
 
   let stroke_alpha = 15;
 
@@ -27,14 +30,14 @@ function draw() {
   }
 
   stroke(random(130, 255), random(130, 255), random(130, 255), stroke_alpha);
-  line(xpos1, ypos1, xpos2, ypos2);
+  line(x1, y1, x2, y2);
 
 }
 
 function windowResized() {
 
   resizeCanvas(windowWidth, windowHeight);
-  radius = 3*min(width, height);
   background(20, 20, 20);
+  radius = Math.sqrt(width*width + height*height);
 
 }
