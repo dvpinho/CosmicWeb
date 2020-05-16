@@ -35,10 +35,6 @@ body {
 }
 
 /* Basic */
-@-ms-viewport {
-  width: device-width;
-}
-
 body {
   -ms-overflow-style: scrollbar;
 }
@@ -74,11 +70,9 @@ body {
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
-  -moz-flex-direction: column;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -moz-justify-content: center;
   -webkit-justify-content: center;
   -ms-justify-content: center;
   justify-content: center;
@@ -190,7 +184,6 @@ h1 {
   position: relative;
 }
 .icon:before {
-  -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
   font-style: normal;
